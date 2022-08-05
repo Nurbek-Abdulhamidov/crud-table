@@ -220,3 +220,124 @@ class App extends Component {
 }
 
 export default App;
+<ElementContainer>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>AGE</th>
+      <th>ADDRESS</th>
+      <th>STATUS</th>
+      <th>NICKNAME</th>
+      <th>UNIV</th>
+      <th>JOB</th>
+      <th>EDIT</th>
+    </tr>
+  </thead>
+  {this.state.data.map((value, index) => (
+    <tbody key={index}>
+      <td>{value.id}</td>
+      <td>
+        {this.state.selected?.id === value.id ? (
+          <Input
+            width="250px"
+            ref={nameRef}
+            type="text"
+            defaultValue={this.state.selected.name}
+          />
+        ) : (
+          value.name
+        )}
+      </td>
+      <td>
+        {this.state.selected?.id === value.id ? (
+          <Input
+            width="40px"
+            ref={ageRef}
+            type="number"
+            defaultValue={this.state.selected.age}
+          />
+        ) : (
+          value.age
+        )}
+      </td>
+      <td>
+        {this.state.selected?.id === value.id ? (
+          <Input
+            width="120px"
+            ref={addressRef}
+            type="text"
+            defaultValue={this.state.selected.address}
+          />
+        ) : (
+          value.address
+        )}
+      </td>
+      <td>
+        {this.state.selected?.id === value.id ? (
+          <Input
+            width="80px"
+            ref={statusRef}
+            type="text"
+            defaultValue={this.state.selected.status}
+          />
+        ) : (
+          value.status
+        )}
+      </td>
+      <td>
+        {" "}
+        {this.state.selected?.id === value.id ? (
+          <Input
+            width="90px"
+            ref={nicknameRef}
+            type="text"
+            defaultValue={this.state.selected.nickname}
+          />
+        ) : (
+          value.nickname
+        )}
+      </td>
+      <td>
+        {this.state.selected?.id === value.id ? (
+          <Input
+            width="150px"
+            ref={univRef}
+            type="text"
+            defaultValue={this.state.selected.univ}
+          />
+        ) : (
+          value.univ
+        )}
+      </td>
+      <td>
+        {this.state.selected?.id === value.id ? (
+          <Input
+            width="100px"
+            ref={jobRef}
+            type="text"
+            defaultValue={this.state.selected.job}
+          />
+        ) : (
+          value.job
+        )}
+      </td>
+
+      <td>
+        {this.state.selected?.id === value.id ? (
+          <BtnDiv>
+            <Button onClick={SaveItem}>Save</Button>
+            <Button onClick={CancelItem}>Cancel</Button>
+          </BtnDiv>
+        ) : (
+          <BtnDiv>
+            <Button onClick={() => EditItem(value)}>Edit</Button>
+            <Button onClick={() => DeleteItem(value)}>Delete</Button>
+          </BtnDiv>
+        )}
+      </td>
+    </tbody>
+  ))}
+</table>
+</ElementContainer>
