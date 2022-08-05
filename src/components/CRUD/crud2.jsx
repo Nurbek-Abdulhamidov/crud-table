@@ -23,7 +23,13 @@ class Crud2 extends Component {
     warning: "",
   };
   render() {
-    const inputRef = React.createRef("");
+    const ageRef = React.createRef("");
+    const addressRef = React.createRef("");
+    const statusRef = React.createRef("");
+    const nicknameRef = React.createRef("");
+    const univRef = React.createRef("");
+    const jobRef = React.createRef("");
+    const nameRef = React.createRef("");
 
     if (this.state.selectValue === "all") {
       this.SearchUser = ({ target }) => {
@@ -71,7 +77,16 @@ class Crud2 extends Component {
     const SaveItem = () => {
       let res = this.state.data.map((value) =>
         value.id === this.state.selected?.id
-          ? { ...value, name: inputRef.current.value }
+          ? {
+              ...value,
+              name: nameRef.current.value,
+              age: ageRef.current.value,
+              address: addressRef.current.value,
+              status: statusRef.current.value,
+              nickname: nicknameRef.current.value,
+              univ: univRef.current.value,
+              job: jobRef.current.value,
+            }
           : value
       );
       this.setState({
@@ -128,24 +143,26 @@ class Crud2 extends Component {
         </InputContainer>
         <ElementContainer>
           <table border={1} style={{ borderCollapse: "collapse" }}>
-            <tr>
-              <th>ID</th>
-              <th>NAME</th>
-              <th>AGE</th>
-              <th>ADDRESS</th>
-              <th>STATUS</th>
-              <th>NICKNAME</th>
-              <th>UNIV</th>
-              <th>JOB</th>
-              <th>EDIT</th>
-            </tr>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>ADDRESS</th>
+                <th>STATUS</th>
+                <th>NICKNAME</th>
+                <th>UNIV</th>
+                <th>JOB</th>
+                <th>EDIT</th>
+              </tr>
+            </thead>
             {this.state.data.map((value, index) => (
-              <tr key={index}>
+              <tbody key={index}>
                 <td>{value.id}</td>
                 <td>
                   {this.state.selected?.id === value.id ? (
                     <input
-                      ref={inputRef}
+                      ref={nameRef}
                       type="text"
                       defaultValue={this.state.selected.name}
                     />
@@ -153,12 +170,73 @@ class Crud2 extends Component {
                     value.name
                   )}
                 </td>
-                <td>{value.age}</td>
-                <td>{value.address}</td>
-                <td>{value.status}</td>
-                <td>{value.nickname}</td>
-                <td>{value.univ}</td>
-                <td>{value.job}</td>
+                <td>
+                  {this.state.selected?.id === value.id ? (
+                    <input
+                      ref={ageRef}
+                      type="number"
+                      defaultValue={this.state.selected.age}
+                    />
+                  ) : (
+                    value.age
+                  )}
+                </td>
+                <td>
+                  {this.state.selected?.id === value.id ? (
+                    <input
+                      ref={addressRef}
+                      type="text"
+                      defaultValue={this.state.selected.address}
+                    />
+                  ) : (
+                    value.address
+                  )}
+                </td>
+                <td>
+                  {this.state.selected?.id === value.id ? (
+                    <input
+                      ref={statusRef}
+                      type="text"
+                      defaultValue={this.state.selected.status}
+                    />
+                  ) : (
+                    value.status
+                  )}
+                </td>
+                <td>
+                  {" "}
+                  {this.state.selected?.id === value.id ? (
+                    <input
+                      ref={nicknameRef}
+                      type="text"
+                      defaultValue={this.state.selected.nickname}
+                    />
+                  ) : (
+                    value.nickname
+                  )}
+                </td>
+                <td>
+                  {this.state.selected?.id === value.id ? (
+                    <input
+                      ref={univRef}
+                      type="text"
+                      defaultValue={this.state.selected.univ}
+                    />
+                  ) : (
+                    value.univ
+                  )}
+                </td>
+                <td>
+                  {this.state.selected?.id === value.id ? (
+                    <input
+                      ref={jobRef}
+                      type="text"
+                      defaultValue={this.state.selected.job}
+                    />
+                  ) : (
+                    value.job
+                  )}
+                </td>
 
                 <td>
                   {this.state.selected?.id === value.id ? (
@@ -173,7 +251,7 @@ class Crud2 extends Component {
                     </BtnDiv>
                   )}
                 </td>
-              </tr>
+              </tbody>
             ))}
           </table>
         </ElementContainer>
