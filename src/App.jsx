@@ -53,6 +53,9 @@ class App extends Component {
         },
       ],
     });
+    this.state.firstName = "";
+    this.state.lastName = "";
+    this.state.address = "";
   }
 
   Onsave() {
@@ -114,7 +117,7 @@ class App extends Component {
         </DivAll>
         <table border={1} style={{ borderCollapse: "collapse" }}>
           <thead>
-            <tr>
+            <tr border={1} >
               <th>Firstname</th>
               <th>Lastname</th>
               <th>Address</th>
@@ -127,7 +130,7 @@ class App extends Component {
                 (value.firstName
                   .toLowerCase()
                   .includes(this.state.searchUser.toLowerCase()) ||
-                  value.lastName
+                  value.lastame
                     .toLowerCase()
                     .includes(this.state.searchUser.toLowerCase()) ||
                   value.address
