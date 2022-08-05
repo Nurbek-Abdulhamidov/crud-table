@@ -1,5 +1,14 @@
 export const data = [
-  { id: 1, name: "Abdulhamidov Nurbek" },
+  {
+    id: 1,
+    name: "Abdulhamidov Nurbek",
+    age: 23,
+    address: "Namangan",
+    status: "Student",
+    nickname: "Qo'zivoy",
+    univ: "Economica",
+    job: "developer",
+  },
   { id: 2, name: "Muhtorov Azizbek" },
   { id: 3, name: "Nizamov Sardorbek" },
   { id: 4, name: "Ismonov Temurbek" },
@@ -7,4 +16,11 @@ export const data = [
   { id: 6, name: "Ismonov Sanjarbek" },
   { id: 7, name: "Aliyev Asatbek" },
   { id: 8, name: "Kenjayev Yahyo" },
+  { id: 9, name: "Muhtorov Azizbek" },
+  { id: 10, name: "Nizamov Sardorbek" },
+  { id: 11, name: "Ismonov Temurbek" },
+  { id: 12, name: "Abdulhamidov Otabek" },
+  { id: 13, name: "Ismonov Sanjarbek" },
+  { id: 14, name: "Aliyev Asatbek" },
+  { id: 15, name: "Kenjayev Yahyo" },
 ];

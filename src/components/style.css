@@ -3,11 +3,6 @@
   width: 8px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  border-radius: 50px !important;
-}
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #c5c3c3;
@@ -16,73 +11,6 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #a1a1a1;
-}
-
-.inputContainer {
-  position: relative;
-}
-
-h1 {
-  font-weight: 600;
-  font-size: 50px;
-}
-
-input {
-  padding: 5px 10px;
-}
-
-button {
-  padding: 5px 15px;
-  margin: 5px 0;
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-  margin-top: 30px;
-}
-
-ul li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.container {
-  width: 600px;
-  height: 350px;
-  padding: 0 5px;
-  overflow-y: scroll;
-}
-
-.btnDiv {
-  display: flex;
-  gap: 10px;
-}
-
-.inputWrap {
-  width: 580px;
-  position: fixed;
-  top: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.searchDiv {
-  position: fixed;
-  top: 100px;
-  display: flex;
-  align-items: center;
-  width: 580px;
-  border-bottom: 1px solid #f4f4f4;
-  background-color: #ffff;
-}
-.searchDiv input {
-  width: 100%;
-  margin: 10px 0;
 }
 
 select {

@@ -1,6 +1,17 @@
 import React, { Component } from "react";
-import "./style.css";
-import { data } from "../Data";
+import "../style.css";
+import { data } from "../../Data";
+import {
+  BtnDiv,
+  Button,
+  Container,
+  ElementContainer,
+  Input,
+  InputContainer,
+  InputWrap,
+  SearchDiv,
+  Select,
+} from "./Crud";
 
 class Crud2 extends Component {
   state = {
@@ -82,10 +93,11 @@ class Crud2 extends Component {
     };
     console.log(this.state.selectValue);
     return (
-      <div className="container">
-        <div className="inputContainer">
-          <div className="inputWrap">
-            <input
+      <Container>
+        <InputContainer>
+          <InputWrap>
+            <Input
+              width="89%"
               type="text"
               placeholder="Add user . . ."
               name="inputValue"
@@ -94,15 +106,16 @@ class Crud2 extends Component {
                 this.setState({ inputValue: target.value })
               }
             />
-            <button onClick={AddUser}>Add User</button>
-          </div>
-          <div className="searchDiv">
-            <input
+            <Button onClick={AddUser}>Add User</Button>
+          </InputWrap>
+          <SearchDiv>
+            <Input
+              width="89%"
               type="text"
               placeholder="Search users . . ."
               onChange={this.SearchUser}
             />
-            <select
+            <Select
               onChange={({ target }) =>
                 this.setState({ selectValue: target.value })
               }
@@ -110,37 +123,61 @@ class Crud2 extends Component {
               <option value="all">all</option>
               <option value="id">ID</option>
               <option value="name">Name</option>
-            </select>
-          </div>
-        </div>
-        <ul>
-          {this.state.data.map((value, index) => (
-            <li key={index}>
-              {this.state.selected?.id === value.id ? (
-                <input
-                  ref={inputRef}
-                  type="text"
-                  defaultValue={this.state.selected.name}
-                />
-              ) : (
-                value.id
-              )}
-              - {value.name}
-              {this.state.selected?.id === value.id ? (
-                <div className="btnDiv">
-                  <button onClick={SaveItem}>Save</button>
-                  <button onClick={CancelItem}>Cancel</button>
-                </div>
-              ) : (
-                <div className="btnDiv">
-                  <button onClick={() => EditItem(value)}>Edit</button>
-                  <button onClick={() => DeleteItem(value)}>Delete</button>
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
+            </Select>
+          </SearchDiv>
+        </InputContainer>
+        <ElementContainer>
+          <table border={1} style={{ borderCollapse: "collapse" }}>
+            <tr>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>AGE</th>
+              <th>ADDRESS</th>
+              <th>STATUS</th>
+              <th>NICKNAME</th>
+              <th>UNIV</th>
+              <th>JOB</th>
+              <th>EDIT</th>
+            </tr>
+            {this.state.data.map((value, index) => (
+              <tr key={index}>
+                <td>{value.id}</td>
+                <td>
+                  {this.state.selected?.id === value.id ? (
+                    <input
+                      ref={inputRef}
+                      type="text"
+                      defaultValue={this.state.selected.name}
+                    />
+                  ) : (
+                    value.name
+                  )}
+                </td>
+                <td>{value.age}</td>
+                <td>{value.address}</td>
+                <td>{value.status}</td>
+                <td>{value.nickname}</td>
+                <td>{value.univ}</td>
+                <td>{value.job}</td>
+
+                <td>
+                  {this.state.selected?.id === value.id ? (
+                    <BtnDiv>
+                      <Button onClick={SaveItem}>Save</Button>
+                      <Button onClick={CancelItem}>Cancel</Button>
+                    </BtnDiv>
+                  ) : (
+                    <BtnDiv>
+                      <Button onClick={() => EditItem(value)}>Edit</Button>
+                      <Button onClick={() => DeleteItem(value)}>Delete</Button>
+                    </BtnDiv>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </table>
+        </ElementContainer>
+      </Container>
     );
   }
 }
