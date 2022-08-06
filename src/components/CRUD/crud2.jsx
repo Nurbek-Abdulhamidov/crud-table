@@ -28,6 +28,7 @@ class Crud2 extends Component {
     selectValue: "all",
     selected: null,
     modal: false,
+    font: "Montserrat",
   };
   render() {
     const ageRef = React.createRef("");
@@ -133,9 +134,10 @@ class Crud2 extends Component {
         data: this.state.data.filter((val) => val.id !== value.id),
       });
     };
-    console.log(this.state.selectValue);
+    console.log(this.state.font);
+    // this.state.data.map((value, index) => console.log(value.fonts[index]));
     return (
-      <Container>
+      <Container font={this.state.font}>
         <InputContainer>
           <WrapperInput open={this.state.modal}>
             {this.state.modal && (
@@ -281,6 +283,18 @@ class Crud2 extends Component {
               <option value="all">All</option>
               <option value="id">Id</option>
               <option value="name">Name</option>
+            </Select>
+            <Select
+              name=""
+              id=""
+              onChange={({ target }) => this.setState({ font: target.value })}
+            >
+              <option value="Nunito">Nunito</option>
+              <option value="Montserrat">Montserrat</option>
+              <option value="Roboto">Roboto</option>
+              <option value="Alegreya SC">Alegreya</option>
+              <option value="Poppins">Poppins</option>
+              <option value="Ultra">Ultra</option>
             </Select>
           </SearchDiv>
         </InputContainer>

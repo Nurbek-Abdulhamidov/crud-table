@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  font-family: "Montserrat", sans-serif;
+  font-family: ${({ font }) => (font ? font : "sans-serif")};
   position: relative;
   height: 90vh;
   padding: 0 0px;
@@ -149,14 +149,14 @@ export const ElementContainer = styled.div`
 
 export const BtnDiv = styled.div`
   display: flex;
-  align-items:center ;
-  justify-content:center ;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
 `;
 
 export const Button = styled.button`
   all: unset;
-  width:80px ;
+  width: 80px;
   text-align: center;
   width: ${({ width }) => (width ? width : "")};
   border: 2px solid ${({ rang }) => (rang ? rang : "#000")};
@@ -183,3 +183,10 @@ export const Select = styled.select`
   padding: 10px;
   cursor: pointer;
 `;
+
+// font-family: 'Bitter', serif;
+// font-family: 'Nunito', sans-serif;
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Alegreya SC', serif;
+// font-family: 'Ultra', serif;
