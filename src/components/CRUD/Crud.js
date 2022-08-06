@@ -6,11 +6,14 @@ export const Container = styled.div`
   height: 90vh;
   padding: 0 0px;
   border-radius: 10px;
+  width: 1400px;
 
-  width: 1450px;
+  @media (max-width: 1500px) {
+    width: 1200px;
+  }
 
   @media (max-width: 1400px) {
-    width: 1350px;
+    width: 1100px;
   }
 
   @media (max-width: 1300px) {
@@ -18,7 +21,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1200px) {
-    width: 1150px;
+    width: 900px;
   }
 
   @media (max-width: 1100px) {
@@ -75,6 +78,12 @@ export const SearchDiv = styled.div`
 
 export const InputWrap = styled.div`
   margin: 10px 0;
+`;
+
+export const Image = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 `;
 
 export const Input = styled.input`
@@ -136,6 +145,11 @@ export const ElementContainer = styled.div`
     padding: 0 15px;
   }
 
+  thead th:nth-child(9),
+  tbody td:nth-child(9) {
+    width: 200px;
+  }
+
   td {
     font-size: 16px;
   }
@@ -151,6 +165,13 @@ export const ElementContainer = styled.div`
     text-align: left;
     padding: 11px;
   }
+`;
+
+export const Td = styled.td`
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;
 
 export const BtnDiv = styled.div`

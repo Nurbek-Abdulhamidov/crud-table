@@ -1,3 +1,6 @@
+
+import avatarImg from "../../assets/avatar.jpg"
+
 export const data = [
   {
     id: 1,
@@ -9,12 +12,7 @@ export const data = [
     univ: "Economical",
     job: "Frontend developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 2,
@@ -26,12 +24,7 @@ export const data = [
     univ: "Westminister",
     job: "Frontend developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 3,
@@ -43,12 +36,7 @@ export const data = [
     univ: "Islam Academy",
     job: "Frontend developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 4,
@@ -60,12 +48,7 @@ export const data = [
     univ: "No",
     job: "Web developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 5,
@@ -77,12 +60,7 @@ export const data = [
     univ: "No",
     job: "developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 6,
@@ -94,12 +72,7 @@ export const data = [
     univ: "TATU",
     job: "Web developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 7,
@@ -111,12 +84,7 @@ export const data = [
     univ: "TATU",
     job: "web developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 8,
@@ -128,12 +96,7 @@ export const data = [
     univ: "Thopmson",
     job: "Full stack developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 9,
@@ -145,12 +108,7 @@ export const data = [
     univ: "Economica",
     job: "Full stack developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 10,
@@ -162,12 +120,7 @@ export const data = [
     univ: "TATU",
     job: "frontend developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 11,
@@ -179,12 +132,7 @@ export const data = [
     univ: "Economica",
     job: "developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 12,
@@ -196,12 +144,7 @@ export const data = [
     univ: "Economica",
     job: "developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 13,
@@ -213,12 +156,7 @@ export const data = [
     univ: "Economica",
     job: "developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 14,
@@ -230,12 +168,7 @@ export const data = [
     univ: "Economica",
     job: "developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
   {
     id: 15,
@@ -247,11 +180,6 @@ export const data = [
     univ: "Economica",
     job: "developer",
     phone: "+998 94 044 70 64",
-    fonts: [
-      { font: "sans-serif" },
-      { font: "Roboto" },
-      { font: "Nunito" },
-      { font: "Montserrat" },
-    ],
+    image: avatarImg,
   },
 ];

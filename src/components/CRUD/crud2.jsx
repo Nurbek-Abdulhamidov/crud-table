@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "../style.css";
-import { data } from "../../Data";
+import { data } from "./Data";
 import {
   BtnDiv,
   Button,
   Container,
   ElementContainer,
+  Image,
   Input,
   InputContainer,
   InputsDiv,
@@ -13,6 +14,7 @@ import {
   Note,
   SearchDiv,
   Select,
+  Td,
   WrapperInput,
 } from "./Crud";
 
@@ -280,7 +282,7 @@ class Crud2 extends Component {
               padding="10px"
               width="100%"
               type="text"
-              placeholder="Search users . . .   🔍"
+              placeholder="🔍  Search users . . ."
               onChange={this.SearchUser}
             />
             <Select
@@ -307,7 +309,7 @@ class Crud2 extends Component {
           </SearchDiv>
         </InputContainer>
         <ElementContainer>
-          <Note>You can edit element on double click</Note>
+          <Note>You can edit an element on double click</Note>
           <table>
             <thead>
               <tr>
@@ -325,7 +327,8 @@ class Crud2 extends Component {
             {this.state.data.map((value, index) => (
               <tbody key={index} onDoubleClick={() => DoubleClick(value)}>
                 <td>{index + 1}</td>
-                <td>
+                <Td>
+                  <Image src={value.image} />
                   {this.state.selected?.id === value.id ? (
                     <Input
                       width="200px"
@@ -336,7 +339,7 @@ class Crud2 extends Component {
                   ) : (
                     value.name
                   )}
-                </td>
+                </Td>
                 <td>
                   {this.state.selected?.id === value.id ? (
                     <Input
