@@ -9,6 +9,7 @@ export const data = [
     univ: "Economical",
     job: "Frontend developer",
     phone: "+998 94 044 70 64",
+    
   },
   {
     id: 2,

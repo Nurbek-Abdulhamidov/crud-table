@@ -175,7 +175,7 @@ class Crud2 extends Component {
                   <Input
                     type="text"
                     padding="8px 5px"
-                    placeholder="Add user . . ."
+                    placeholder="Add status . . ."
                     name="statusValue"
                     value={this.state.statusValue}
                     onChange={({ target }) =>
@@ -187,7 +187,7 @@ class Crud2 extends Component {
                   <Input
                     type="text"
                     padding="8px 5px"
-                    placeholder="Add user . . ."
+                    placeholder="Add nickname . . ."
                     name="nicknameValue"
                     value={this.state.nicknameValue}
                     onChange={({ target }) =>
@@ -199,7 +199,7 @@ class Crud2 extends Component {
                   <Input
                     type="text"
                     padding="8px 5px"
-                    placeholder="Add user . . ."
+                    placeholder="Add university . . ."
                     name="univValue"
                     value={this.state.univValue}
                     onChange={({ target }) =>
@@ -211,7 +211,7 @@ class Crud2 extends Component {
                   <Input
                     type="text"
                     padding="8px 5px"
-                    placeholder="Add user . . ."
+                    placeholder="Add job . . ."
                     name="jobValue"
                     value={this.state.jobValue}
                     onChange={({ target }) =>
@@ -300,7 +300,7 @@ class Crud2 extends Component {
                 <td>
                   {this.state.selected?.id === value.id ? (
                     <Input
-                      width="150px"
+                      width="200px"
                       ref={nameRef}
                       type="text"
                       defaultValue={this.state.selected.name}
@@ -312,7 +312,7 @@ class Crud2 extends Component {
                 <td>
                   {this.state.selected?.id === value.id ? (
                     <Input
-                      width="100%"
+                      width="45px"
                       ref={ageRef}
                       type="number"
                       defaultValue={this.state.selected.age}
@@ -349,7 +349,7 @@ class Crud2 extends Component {
                   {" "}
                   {this.state.selected?.id === value.id ? (
                     <Input
-                      width="100%"
+                      width="90%"
                       ref={nicknameRef}
                       type="text"
                       defaultValue={this.state.selected.nickname}
@@ -373,7 +373,7 @@ class Crud2 extends Component {
                 <td>
                   {this.state.selected?.id === value.id ? (
                     <Input
-                      width="100%"
+                      width="90%"
                       ref={jobRef}
                       type="text"
                       defaultValue={this.state.selected.job}
@@ -400,14 +400,14 @@ class Crud2 extends Component {
                         bg="green"
                         rang="green"
                       >
-                        Edit
+                       ✏️ Edit
                       </Button>
                       <Button
                         onClick={() => DeleteItem(value)}
                         bg="red"
                         rang="red"
                       >
-                        Delete
+                      ❌  Delete
                       </Button>
                     </BtnDiv>
                   )}

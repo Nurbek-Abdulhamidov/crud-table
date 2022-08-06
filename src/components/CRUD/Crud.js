@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding: 0 0px;
   border-radius: 10px;
 
-  width: 1400px;
+  width: 1450px;
 
   @media (max-width: 1400px) {
     width: 1350px;
@@ -41,6 +41,13 @@ export const Container = styled.div`
 export const InputsDiv = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto;
+  @media (max-width: 1400px) {
+    grid-template-columns: auto auto auto auto;
+  }
+
+  @media (max-width: 1100px) {
+    grid-template-columns: auto auto;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -72,7 +79,7 @@ export const InputWrap = styled.div`
 
 export const Input = styled.input`
   all: unset;
-  padding: ${({ padding }) => (padding ? padding : "5px")};
+  padding: ${({ padding }) => (padding ? padding : "5px 10px")};
   border: 1px solid #000;
   background-color: #f4f4f4;
   border-radius: 5px;
@@ -142,11 +149,14 @@ export const ElementContainer = styled.div`
 
 export const BtnDiv = styled.div`
   display: flex;
+  align-items:center ;
+  justify-content:center ;
   gap: 10px;
 `;
 
 export const Button = styled.button`
   all: unset;
+  width:80px ;
   text-align: center;
   width: ${({ width }) => (width ? width : "")};
   border: 2px solid ${({ rang }) => (rang ? rang : "#000")};
