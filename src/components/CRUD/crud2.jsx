@@ -10,6 +10,7 @@ import {
   InputContainer,
   InputsDiv,
   InputWrap,
+  Note,
   SearchDiv,
   Select,
   WrapperInput,
@@ -134,8 +135,14 @@ class Crud2 extends Component {
         data: this.state.data.filter((val) => val.id !== value.id),
       });
     };
-    console.log(this.state.font);
-    // this.state.data.map((value, index) => console.log(value.fonts[index]));
+
+    const DoubleClick = (value) => {
+      this.setState({
+        selected: value,
+      });
+      console.log(this.state.selected);
+    };
+
     return (
       <Container font={this.state.font}>
         <InputContainer>
@@ -229,9 +236,10 @@ class Crud2 extends Component {
                 </InputWrap>
                 <InputWrap>
                   <Input
+                    warn="not-allowed"
                     type="text"
                     padding="8px 5px"
-                    placeholder="❌❌❌"
+                    placeholder=""
                     disabled
                   />
                 </InputWrap>
@@ -272,7 +280,7 @@ class Crud2 extends Component {
               padding="10px"
               width="100%"
               type="text"
-              placeholder="Search users . . ."
+              placeholder="Search users . . .   🔍"
               onChange={this.SearchUser}
             />
             <Select
@@ -299,6 +307,7 @@ class Crud2 extends Component {
           </SearchDiv>
         </InputContainer>
         <ElementContainer>
+          <Note>You can edit element on double click</Note>
           <table>
             <thead>
               <tr>
@@ -306,7 +315,6 @@ class Crud2 extends Component {
                 <th>NAME</th>
                 <th>AGE</th>
                 <th>ADDRESS</th>
-                {/* <th>PHONE</th> */}
                 <th>STATUS</th>
                 <th>NICKNAME</th>
                 <th>UNIVERSITY</th>
@@ -315,7 +323,7 @@ class Crud2 extends Component {
               </tr>
             </thead>
             {this.state.data.map((value, index) => (
-              <tbody key={index}>
+              <tbody key={index} onDoubleClick={() => DoubleClick(value)}>
                 <td>{index + 1}</td>
                 <td>
                   {this.state.selected?.id === value.id ? (

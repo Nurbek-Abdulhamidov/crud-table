@@ -79,11 +79,17 @@ export const InputWrap = styled.div`
 
 export const Input = styled.input`
   all: unset;
+  cursor: ${({ warn }) => (warn ? warn : "")};
   padding: ${({ padding }) => (padding ? padding : "5px 10px")};
   border: 1px solid #000;
   background-color: #f4f4f4;
   border-radius: 5px;
   width: ${({ width }) => (width ? width : "")};
+`;
+
+export const Note = styled.p`
+  text-align: center;
+  color: #00009c;
 `;
 
 export const ElementContainer = styled.div`
