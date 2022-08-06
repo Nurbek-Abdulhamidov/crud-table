@@ -19,7 +19,12 @@ class Crud2 extends Component {
   state = {
     data,
     inputValue: "",
-    searchValue: "",
+    ageValue: "",
+    addressValue: "",
+    statusValue: "",
+    nicknameValue: "",
+    univValue: "",
+    jobValue: "",
     selectValue: "all",
     selected: null,
     modal: false,
@@ -65,10 +70,22 @@ class Crud2 extends Component {
             {
               id: this.state.data.length + 1,
               name: this.state.inputValue,
+              age: this.state.ageValue,
+              address: this.state.addressValue,
+              status: this.state.statusValue,
+              nickname: this.state.nicknameValue,
+              univ: this.state.univValue,
+              job: this.state.jobValue,
             },
           ],
         });
       this.setState({ inputValue: "" });
+      this.setState({ ageValue: "" });
+      this.setState({ addressValue: "" });
+      this.setState({ statusValue: "" });
+      this.setState({ nicknameValue: "" });
+      this.setState({ univValue: "" });
+      this.setState({ jobValue: "" });
     };
 
     const EditItem = (value) => {
@@ -135,10 +152,10 @@ class Crud2 extends Component {
                     type="text"
                     padding="8px 5px"
                     placeholder="Age..."
-                    name="inputValue"
-                    value={this.state.inputValue}
+                    name="ageValue"
+                    value={this.state.ageValue}
                     onChange={({ target }) =>
-                      this.setState({ inputValue: target.value })
+                      this.setState({ ageValue: target.value })
                     }
                   />
                 </InputWrap>
@@ -147,10 +164,10 @@ class Crud2 extends Component {
                     type="text"
                     padding="8px 5px"
                     placeholder="Add address . . ."
-                    name="inputValue"
-                    value={this.state.inputValue}
+                    name="addressValue"
+                    value={this.state.addressValue}
                     onChange={({ target }) =>
-                      this.setState({ inputValue: target.value })
+                      this.setState({ addressValue: target.value })
                     }
                   />
                 </InputWrap>
@@ -159,10 +176,10 @@ class Crud2 extends Component {
                     type="text"
                     padding="8px 5px"
                     placeholder="Add user . . ."
-                    name="inputValue"
-                    value={this.state.inputValue}
+                    name="statusValue"
+                    value={this.state.statusValue}
                     onChange={({ target }) =>
-                      this.setState({ inputValue: target.value })
+                      this.setState({ statusValue: target.value })
                     }
                   />
                 </InputWrap>
@@ -171,10 +188,10 @@ class Crud2 extends Component {
                     type="text"
                     padding="8px 5px"
                     placeholder="Add user . . ."
-                    name="inputValue"
-                    value={this.state.inputValue}
+                    name="nicknameValue"
+                    value={this.state.nicknameValue}
                     onChange={({ target }) =>
-                      this.setState({ inputValue: target.value })
+                      this.setState({ nicknameValue: target.value })
                     }
                   />
                 </InputWrap>
@@ -183,10 +200,10 @@ class Crud2 extends Component {
                     type="text"
                     padding="8px 5px"
                     placeholder="Add user . . ."
-                    name="inputValue"
-                    value={this.state.inputValue}
+                    name="univValue"
+                    value={this.state.univValue}
                     onChange={({ target }) =>
-                      this.setState({ inputValue: target.value })
+                      this.setState({ univValue: target.value })
                     }
                   />
                 </InputWrap>
@@ -195,10 +212,10 @@ class Crud2 extends Component {
                     type="text"
                     padding="8px 5px"
                     placeholder="Add user . . ."
-                    name="inputValue"
-                    value={this.state.inputValue}
+                    name="jobValue"
+                    value={this.state.jobValue}
                     onChange={({ target }) =>
-                      this.setState({ inputValue: target.value })
+                      this.setState({ jobValue: target.value })
                     }
                   />
                 </InputWrap>
@@ -217,16 +234,16 @@ class Crud2 extends Component {
             <BtnDiv>
               <Button
                 width="150px"
-                bg="#2d35d2f7"
-                rang="#2d35d2f7"
+                bg="#08b81af7"
+                rang="#08b81af7"
                 onClick={AddUser}
               >
                 Add User
               </Button>
               <Button
                 width="150px"
-                bg="#2d35d2f7"
-                rang="#2d35d2f7"
+                bg="#a81717f7"
+                rang="#d22d2df7"
                 onClick={() => this.setState({ modal: !this.state.modal })}
               >
                 Close Adding
@@ -244,12 +261,13 @@ class Crud2 extends Component {
           )}
           <SearchDiv>
             <Input
+              padding="10px"
               width="100%"
               type="text"
               placeholder="Search users . . ."
               onChange={this.SearchUser}
             />
-            <select
+            <Select
               onChange={({ target }) =>
                 this.setState({ selectValue: target.value })
               }
@@ -257,7 +275,7 @@ class Crud2 extends Component {
               <option value="all">All</option>
               <option value="id">Id</option>
               <option value="name">Name</option>
-            </select>
+            </Select>
           </SearchDiv>
         </InputContainer>
         <ElementContainer>

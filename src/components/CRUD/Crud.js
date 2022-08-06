@@ -59,6 +59,7 @@ export const WrapperInput = styled.div`
 
 export const SearchDiv = styled.div`
   display: flex;
+  gap: 10px;
   align-items: center;
   justify-content: center;
   background-color: #ffff;
@@ -170,4 +171,5 @@ export const Select = styled.select`
   border: 1px solid #000;
   border-radius: 5px;
   padding: 10px;
+  cursor: pointer;
 `;
