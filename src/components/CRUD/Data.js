@@ -1,5 +1,7 @@
-
-import avatarImg from "../../assets/avatar.jpg"
+import avatarImg from "../../assets/avatar.jpg";
+import avatarImg2 from "../../assets/avatar2.png";
+import avatarImg3 from "../../assets/avatar3.png";
+import avatarImg4 from "../../assets/images.png";
 
 export const data = [
   {
@@ -24,7 +26,7 @@ export const data = [
     univ: "Westminister",
     job: "Frontend developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg2,
   },
   {
     id: 3,
@@ -36,7 +38,7 @@ export const data = [
     univ: "Islam Academy",
     job: "Frontend developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg3,
   },
   {
     id: 4,
@@ -48,7 +50,7 @@ export const data = [
     univ: "No",
     job: "Web developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg4,
   },
   {
     id: 5,
@@ -72,7 +74,7 @@ export const data = [
     univ: "TATU",
     job: "Web developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg2,
   },
   {
     id: 7,
@@ -96,7 +98,7 @@ export const data = [
     univ: "Thopmson",
     job: "Full stack developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg3,
   },
   {
     id: 9,
@@ -108,7 +110,7 @@ export const data = [
     univ: "Economica",
     job: "Full stack developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg2,
   },
   {
     id: 10,
@@ -120,7 +122,7 @@ export const data = [
     univ: "TATU",
     job: "frontend developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg4,
   },
   {
     id: 11,
@@ -132,7 +134,7 @@ export const data = [
     univ: "Economica",
     job: "developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg3,
   },
   {
     id: 12,
@@ -144,7 +146,7 @@ export const data = [
     univ: "Economica",
     job: "developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg2,
   },
   {
     id: 13,
@@ -156,7 +158,7 @@ export const data = [
     univ: "Economica",
     job: "developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg3,
   },
   {
     id: 14,
@@ -168,7 +170,7 @@ export const data = [
     univ: "Economica",
     job: "developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg4,
   },
   {
     id: 15,
@@ -180,6 +182,6 @@ export const data = [
     univ: "Economica",
     job: "developer",
     phone: "+998 94 044 70 64",
-    image: avatarImg,
+    image: avatarImg3,
   },
 ];
