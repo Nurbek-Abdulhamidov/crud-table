@@ -43,8 +43,14 @@ class Crud2 extends Component {
       this.SearchUser = ({ target }) => {
         let res = data.filter(
           (val) =>
+            `${val.age}`.includes(target.value) ||
             `${val.id}`.includes(target.value) ||
-            val.name.toLowerCase().includes(target.value.toLowerCase())
+            val.name.toLowerCase().includes(target.value.toLowerCase()) ||
+            val.address.toLowerCase().includes(target.value.toLowerCase()) ||
+            val.status.toLowerCase().includes(target.value.toLowerCase()) ||
+            val.nickname.toLowerCase().includes(target.value.toLowerCase()) ||
+            val.univ.toLowerCase().includes(target.value.toLowerCase()) ||
+            val.job.toLowerCase().includes(target.value.toLowerCase())
         );
         this.setState({ data: res ? res : "" });
       };
@@ -400,14 +406,14 @@ class Crud2 extends Component {
                         bg="green"
                         rang="green"
                       >
-                       ✏️ Edit
+                        ✏️ Edit
                       </Button>
                       <Button
                         onClick={() => DeleteItem(value)}
                         bg="red"
                         rang="red"
                       >
-                      ❌  Delete
+                        ❌ Delete
                       </Button>
                     </BtnDiv>
                   )}
