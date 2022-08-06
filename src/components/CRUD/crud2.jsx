@@ -8,9 +8,11 @@ import {
   ElementContainer,
   Input,
   InputContainer,
+  InputsDiv,
   InputWrap,
   SearchDiv,
   Select,
+  WrapperInput,
 } from "./Crud";
 
 class Crud2 extends Component {
@@ -20,7 +22,7 @@ class Crud2 extends Component {
     searchValue: "",
     selectValue: "all",
     selected: null,
-    warning: "",
+    modal: false,
   };
   render() {
     const ageRef = React.createRef("");
@@ -30,7 +32,7 @@ class Crud2 extends Component {
     const univRef = React.createRef("");
     const jobRef = React.createRef("");
     const nameRef = React.createRef("");
-    const phoneRef = React.createRef("");
+    // const phoneRef = React.createRef("");
 
     if (this.state.selectValue === "all") {
       this.SearchUser = ({ target }) => {
@@ -39,7 +41,7 @@ class Crud2 extends Component {
             `${val.id}`.includes(target.value) ||
             val.name.toLowerCase().includes(target.value.toLowerCase())
         );
-        this.setState({ data: res.length && res });
+        this.setState({ data: res ? res : "" });
       };
     } else if (this.state.selectValue === "id") {
       this.SearchUser = ({ target }) => {
@@ -51,7 +53,7 @@ class Crud2 extends Component {
         let res = data.filter((val) =>
           val.name.toLowerCase().includes(target.value.toLowerCase())
         );
-        this.setState({ data: res.length && res });
+        this.setState({ data: res ? res : "" });
       };
     }
 
@@ -87,7 +89,7 @@ class Crud2 extends Component {
               nickname: nicknameRef.current.value,
               univ: univRef.current.value,
               job: jobRef.current.value,
-              phone: phoneRef.current.value,
+              // phone: phoneRef.current.value,
             }
           : value
       );
@@ -112,22 +114,137 @@ class Crud2 extends Component {
     return (
       <Container>
         <InputContainer>
-          <InputWrap>
-            <Input
-              width="89%"
-              type="text"
-              placeholder="Add user . . ."
-              name="inputValue"
-              value={this.state.inputValue}
-              onChange={({ target }) =>
-                this.setState({ inputValue: target.value })
-              }
-            />
-            <Button onClick={AddUser}>Add User</Button>
-          </InputWrap>
+          <WrapperInput open={this.state.modal}>
+            {this.state.modal && (
+              <InputsDiv>
+                <InputWrap>
+                  <Input
+                    type="text"
+                    padding="8px 5px"
+                    placeholder="Add user . . ."
+                    name="inputValue"
+                    value={this.state.inputValue}
+                    onChange={({ target }) =>
+                      this.setState({ inputValue: target.value })
+                    }
+                  />
+                </InputWrap>
+                <InputWrap>
+                  <Input
+                    // width="50px"
+                    type="text"
+                    padding="8px 5px"
+                    placeholder="Age..."
+                    name="inputValue"
+                    value={this.state.inputValue}
+                    onChange={({ target }) =>
+                      this.setState({ inputValue: target.value })
+                    }
+                  />
+                </InputWrap>
+                <InputWrap>
+                  <Input
+                    type="text"
+                    padding="8px 5px"
+                    placeholder="Add address . . ."
+                    name="inputValue"
+                    value={this.state.inputValue}
+                    onChange={({ target }) =>
+                      this.setState({ inputValue: target.value })
+                    }
+                  />
+                </InputWrap>
+                <InputWrap>
+                  <Input
+                    type="text"
+                    padding="8px 5px"
+                    placeholder="Add user . . ."
+                    name="inputValue"
+                    value={this.state.inputValue}
+                    onChange={({ target }) =>
+                      this.setState({ inputValue: target.value })
+                    }
+                  />
+                </InputWrap>
+                <InputWrap>
+                  <Input
+                    type="text"
+                    padding="8px 5px"
+                    placeholder="Add user . . ."
+                    name="inputValue"
+                    value={this.state.inputValue}
+                    onChange={({ target }) =>
+                      this.setState({ inputValue: target.value })
+                    }
+                  />
+                </InputWrap>
+                <InputWrap>
+                  <Input
+                    type="text"
+                    padding="8px 5px"
+                    placeholder="Add user . . ."
+                    name="inputValue"
+                    value={this.state.inputValue}
+                    onChange={({ target }) =>
+                      this.setState({ inputValue: target.value })
+                    }
+                  />
+                </InputWrap>
+                <InputWrap>
+                  <Input
+                    type="text"
+                    padding="8px 5px"
+                    placeholder="Add user . . ."
+                    name="inputValue"
+                    value={this.state.inputValue}
+                    onChange={({ target }) =>
+                      this.setState({ inputValue: target.value })
+                    }
+                  />
+                </InputWrap>
+                <InputWrap>
+                  <Input
+                    type="text"
+                    padding="8px 5px"
+                    placeholder="❌❌❌"
+                    disabled
+                  />
+                </InputWrap>
+              </InputsDiv>
+            )}
+          </WrapperInput>
+          {this.state.modal === true ? (
+            <BtnDiv>
+              <Button
+                width="150px"
+                bg="#2d35d2f7"
+                rang="#2d35d2f7"
+                onClick={AddUser}
+              >
+                Add User
+              </Button>
+              <Button
+                width="150px"
+                bg="#2d35d2f7"
+                rang="#2d35d2f7"
+                onClick={() => this.setState({ modal: !this.state.modal })}
+              >
+                Close Adding
+              </Button>
+            </BtnDiv>
+          ) : (
+            <Button
+              width="150px"
+              bg="#2d35d2f7"
+              rang="#2d35d2f7"
+              onClick={() => this.setState({ modal: !this.state.modal })}
+            >
+              New User
+            </Button>
+          )}
           <SearchDiv>
             <Input
-              width="89%"
+              width="100%"
               type="text"
               placeholder="Search users . . ."
               onChange={this.SearchUser}
@@ -151,7 +268,7 @@ class Crud2 extends Component {
                 <th>NAME</th>
                 <th>AGE</th>
                 <th>ADDRESS</th>
-                <th>PHONE</th>
+                {/* <th>PHONE</th> */}
                 <th>STATUS</th>
                 <th>NICKNAME</th>
                 <th>UNIVERSITY</th>
@@ -161,11 +278,11 @@ class Crud2 extends Component {
             </thead>
             {this.state.data.map((value, index) => (
               <tbody key={index}>
-                <td>{value.id}</td>
+                <td>{index + 1}</td>
                 <td>
                   {this.state.selected?.id === value.id ? (
                     <Input
-                      width="250px"
+                      width="150px"
                       ref={nameRef}
                       type="text"
                       defaultValue={this.state.selected.name}
@@ -177,7 +294,7 @@ class Crud2 extends Component {
                 <td>
                   {this.state.selected?.id === value.id ? (
                     <Input
-                      width="40px"
+                      width="100%"
                       ref={ageRef}
                       type="number"
                       defaultValue={this.state.selected.age}
@@ -189,25 +306,13 @@ class Crud2 extends Component {
                 <td>
                   {this.state.selected?.id === value.id ? (
                     <Input
-                      width="120px"
+                      width="150px"
                       ref={addressRef}
                       type="text"
                       defaultValue={this.state.selected.address}
                     />
                   ) : (
                     value.address
-                  )}
-                </td>
-                <td>
-                  {this.state.selected?.id === value.id ? (
-                    <Input
-                      width="120px"
-                      ref={phoneRef}
-                      type="text"
-                      defaultValue={this.state.selected.phone}
-                    />
-                  ) : (
-                    value.phone
                   )}
                 </td>
                 <td>
@@ -226,7 +331,7 @@ class Crud2 extends Component {
                   {" "}
                   {this.state.selected?.id === value.id ? (
                     <Input
-                      width="90px"
+                      width="100%"
                       ref={nicknameRef}
                       type="text"
                       defaultValue={this.state.selected.nickname}
@@ -250,7 +355,7 @@ class Crud2 extends Component {
                 <td>
                   {this.state.selected?.id === value.id ? (
                     <Input
-                      width="100px"
+                      width="100%"
                       ref={jobRef}
                       type="text"
                       defaultValue={this.state.selected.job}
@@ -263,13 +368,29 @@ class Crud2 extends Component {
                 <td>
                   {this.state.selected?.id === value.id ? (
                     <BtnDiv>
-                      <Button onClick={SaveItem}>Save</Button>
-                      <Button onClick={CancelItem}>Cancel</Button>
+                      <Button onClick={SaveItem} bg="#0D64F3" rang="#0D64F3">
+                        Save
+                      </Button>
+                      <Button onClick={CancelItem} bg="red" rang="red">
+                        Cancel
+                      </Button>
                     </BtnDiv>
                   ) : (
                     <BtnDiv>
-                      <Button onClick={() => EditItem(value)}>Edit</Button>
-                      <Button onClick={() => DeleteItem(value)}>Delete</Button>
+                      <Button
+                        onClick={() => EditItem(value)}
+                        bg="green"
+                        rang="green"
+                      >
+                        Edit
+                      </Button>
+                      <Button
+                        onClick={() => DeleteItem(value)}
+                        bg="red"
+                        rang="red"
+                      >
+                        Delete
+                      </Button>
                     </BtnDiv>
                   )}
                 </td>
