@@ -20,8 +20,8 @@ export const Container = styled.div`
     width: 1250px;
   }
 
-  @media (max-width: 1200px) {
-    width: 900px;
+  @media (max-width: 1280px) {
+    width: 1150px;
   }
 
   @media (max-width: 1100px) {
@@ -68,12 +68,17 @@ export const WrapperInput = styled.div`
 `;
 
 export const SearchDiv = styled.div`
+  position: relative;
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: center;
   background-color: #ffff;
   margin: 15px 0;
+
+  .cleanSearch {
+    cursor: pointer;
+  }
 `;
 
 export const InputWrap = styled.div`
@@ -168,7 +173,7 @@ export const ElementContainer = styled.div`
 `;
 
 export const Td = styled.td`
-  width: 300px;
+  /* width: 300px; */
   display: flex;
   align-items: center;
   gap: 10px;

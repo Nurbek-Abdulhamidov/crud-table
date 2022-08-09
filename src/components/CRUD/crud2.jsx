@@ -41,7 +41,7 @@ class Crud2 extends Component {
     const univRef = React.createRef("");
     const jobRef = React.createRef("");
     const nameRef = React.createRef("");
-    // const phoneRef = React.createRef("");
+    const searchRef = React.createRef("");
 
     if (this.state.selectValue === "all") {
       this.SearchUser = ({ target }) => {
@@ -68,7 +68,7 @@ class Crud2 extends Component {
         let res = data.filter((val) =>
           val.name.toLowerCase().includes(target.value.toLowerCase())
         );
-        this.setState({ data: res ? res : "" });
+        this.setState({ data: res ? res : data });
       };
     }
 
@@ -105,25 +105,16 @@ class Crud2 extends Component {
     };
 
     const SaveItem = () => {
-      let res = this.state.data.map((value) =>
+      this.state.data.map((value) =>
         value.id === this.state.selected?.id
           ? {
               ...value,
               name: nameRef.current.value,
               age: ageRef.current.value,
               address: addressRef.current.value,
-              status: statusRef.current.value,
-              nickname: nicknameRef.current.value,
-              univ: univRef.current.value,
-              job: jobRef.current.value,
-              // phone: phoneRef.current.value,
             }
           : value
       );
-      this.setState({
-        data: res,
-        selected: null,
-      });
     };
 
     const CancelItem = () => {
@@ -143,6 +134,11 @@ class Crud2 extends Component {
         selected: value,
       });
       console.log(this.state.selected);
+    };
+
+    const CleanSearch = () => {
+      searchRef.current.value = "";
+      this.setState({ data: data ? data : "" });
     };
 
     return (
@@ -165,7 +161,6 @@ class Crud2 extends Component {
                 </InputWrap>
                 <InputWrap>
                   <Input
-                    // width="50px"
                     type="text"
                     padding="8px 5px"
                     placeholder="Age..."
@@ -279,12 +274,16 @@ class Crud2 extends Component {
           )}
           <SearchDiv>
             <Input
+              ref={searchRef}
               padding="10px"
               width="100%"
               type="text"
               placeholder="🔍  Search users . . ."
               onChange={this.SearchUser}
             />
+            <span className="cleanSearch" onClick={CleanSearch}>
+              ✖️
+            </span>
             <Select
               onChange={({ target }) =>
                 this.setState({ selectValue: target.value })
@@ -300,11 +299,9 @@ class Crud2 extends Component {
               onChange={({ target }) => this.setState({ font: target.value })}
             >
               <option value="Nunito">Nunito</option>
-              <option value="Montserrat">Montserrat</option>
-              <option value="Roboto">Roboto</option>
-              <option value="Alegreya SC">Alegreya</option>
+              <option value="Mouse Memoirs">Mouse</option>
               <option value="Poppins">Poppins</option>
-              <option value="Ultra">Ultra</option>
+              <option value="Dancing Script">Dancing</option>
             </Select>
           </SearchDiv>
         </InputContainer>
